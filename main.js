@@ -57,48 +57,58 @@ function main() {
 					if (parts[0].indexOf(keyword) > -1){ 
 
 						stack.add(function(params, cb){
-								
-								// Retrieve information for an account with query balance
-								newuser.getuserinfo(accountinfo, function(response){
-									if (response){
+								try {
+									// Retrieve information for an account with query balance
+									newuser.getuserinfo(accountinfo, function(response){
+										if (response){
 
-										// query WhoisXML api for info on the domainname
-										lookupName(parts[0], response.username, response.password, function(whoisReponse){
-											
-											// load info on domainname as JSON
-											data = JSON.parse(whoisReponse);
-											try {
+											// query WhoisXML api for info on the domainname
+											lookupName(parts[0], response.username, response.password, function(whoisReponse){
+												
+												// load info on domainname as JSON
+												data = JSON.parse(whoisReponse);
+												try {
 
-												// Check that the name isn't "Registration Private"
-												if (data.WhoisRecord.registrant.name != "Registration Private") {
-													
-													// Build string of information on domainname, name, email, , , ,
-													var output = "";
-						  							output += parts[0];
-						  							output += ",";
-						  							// Split name and print only the first name
-						  							var nameparts = data.WhoisRecord.registrant.name.split(" ");
-						  							output += nameparts[0];
-						  							output += ",";
-						  							output += data.WhoisRecord.registrant.email;
-						  							output += ",";
-						  							output += ",";
-						  							output += ",";
-						  							output += '\n';
-						  							
-						  							// Print string to a file
-													toolset.file.append(outputfile, output, function() {
-															console.log("continuing");
-													});
+													// Check that the name isn't "Registration Private"
+													if (data.WhoisRecord.registrant.name != "Registration Private") {
+														
+														// Build string of information on domainname, name, email, , , ,
+														var output = "";
+							  							output += parts[0];
+							  							output += ",";
+							  							// Split name and print only the first name
+							  							var nameparts = data.WhoisRecord.registrant.name.split(" ");
+							  							output += nameparts[0];
+							  							output += ",";
+							  							output += data.WhoisRecord.registrant.email;
+							  							output += ",";
+							  							output += ",";
+							  							output += ",";
+							  							output += '\n';
+							  							
+							  							// Print string to a file
+														toolset.file.append(outputfile, output, function() {
+																console.log("continuing");
+																cb();
+														});
+													} else {
+														cb();
+													}
 												}
-											}
-											catch(e) {
-												console.log("error: ", e);
-											}
-										});
-									}
-								});								
-							cb();
+												catch(e) {
+													console.log("error: ", e);
+													cb();
+												}
+											});
+										} else {
+											cb();
+										}
+									});	
+								} 
+								catch (e) {
+									cb();
+							}							
+							//cb();
 						});
 					}
 				}

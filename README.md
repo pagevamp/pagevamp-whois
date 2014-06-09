@@ -27,9 +27,9 @@ inputfile:
 
 - Example:
 
-	domain0.com, new, 
-	domain1.com, delete,
-	domain2.com, new,
+		domain0.com, new, 
+		domain1.com, delete,
+		domain2.com, new,
 
 acctsfile:
 
@@ -37,9 +37,9 @@ acctsfile:
 
 - Example:
 
-	username0 password0
-	username1 password1
-	username2 password2
+		username0 password0
+		username1 password1
+		username2 password2
 
 outputfile:
 

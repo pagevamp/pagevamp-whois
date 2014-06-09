@@ -4,7 +4,7 @@ var toolset		= require("toolset");
 var _			= require("underscore");
 var sleep		= require("sleep");
 var newuser		= require('./process/getnewuser.js');
-var domains		= require('./process/getdmains.js');
+var dmains		= require('./process/getdmains.js');
 
 var inputfile	= process.argv[2];	// file of domains to parse 
 var accountinfo	= process.argv[3]; 	// file containing account names and passwords

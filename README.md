@@ -26,19 +26,25 @@ inputfile:
 - Must be csv with first field containing the domain and second field containing its recent change (“new” or “delete”).
 
 - Example:
+
 		domain0.com, new, 
 		domain1.com, delete,
 		domain2.com, new,
 
 accountsfile:
+
 - Must contain username and password on each line separated by a space. 
+
 - Example:
+
 		username0 password0
 		username1 password1
 		username2 password2
 
 outputfile:
+
 - The name of the file to output results to. 
 
 keyword:
+
 - The keyword to search for. 

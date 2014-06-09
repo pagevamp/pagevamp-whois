@@ -17,7 +17,7 @@ Pagevamp whois lookup for domains on specific keywords, generates CSV of registr
 
 ## Usage
 
-Run with:
+1. Run with:
 
 	```$ node terminal.js inputfile accountsfile outputfile keyword```
 

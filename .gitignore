@@ -1,3 +1,3 @@
-/node_modules
-/outfiles
-/uploads
+node_modules/
+outfiles/
+uploads/

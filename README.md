@@ -19,7 +19,7 @@ Pagevamp whois lookup for domains on specific keywords, generates CSV of registr
 
 1. Run with:
 
-	```$ node terminal.js inputfile acctsfile outputfile keyword```
+	```$ node terminal.js inputfile accountsfile outputfile keyword```
 
 inputfile:
 
@@ -31,7 +31,7 @@ inputfile:
 		domain1.com, delete,
 		domain2.com, new,
 
-acctsfile:
+accountsfile:
 
 - Must contain username and password on each line separated by a space. 
 

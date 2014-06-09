@@ -19,7 +19,8 @@
     "fs-extra": "*",
     "morgan": "1.0.0",
     "multer": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "sleep": "*"
 
   },
   "description": "find awesome fresh domains by keyword, with registrant name and email",
